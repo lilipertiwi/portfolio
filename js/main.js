@@ -180,15 +180,15 @@ function openPopup(index) {
     // });
     // myContributions.innerHTML = `${contribution}<br>`;
 
-    // Update technology logos
-    const techLogosContainer = document.getElementById("tech-logos");
-    techLogosContainer.innerHTML = '';
-    project.techLogos.forEach(logo => {
-        const img = document.createElement('img');
-        img.src = logo;
-        img.alt = logo.split('/').pop().split('.')[0];
-        techLogosContainer.appendChild(img);
-    });
+    // // Update technology logos
+    // const techLogosContainer = document.getElementById("tech-logos");
+    // techLogosContainer.innerHTML = '';
+    // project.techLogos.forEach(logo => {
+    //     const img = document.createElement('img');
+    //     img.src = logo;
+    //     img.alt = logo.split('/').pop().split('.')[0];
+    //     techLogosContainer.appendChild(img);
+    // });
 
     // Update links
     const projectLinks = document.getElementById("project-links");
