@@ -10066,7 +10066,7 @@ h6,
   font-weight: bold;
 }
 
-.thumbnails {
+#thumbnails {
   width: 80%;
   max-width: 500px;
   display: flex;
@@ -10075,7 +10075,7 @@ h6,
   margin: 0 auto;
 }
 
-.thumbnails img {
+#thumbnails img {
   width: 60px;
   height: auto;
   cursor: pointer;
@@ -10083,6 +10083,6 @@ h6,
   transition: border-color 0.3s;
 }
 
-.thumbnails img:hover {
+#thumbnails img:hover {
   border-color: #007bff;
 }

@@ -130,29 +130,59 @@ const projects = [
             "- Registration and login feature: Developed the registration and login functionality, ensuring secure user authentication and access control.",
             "- Cart system: Implemented the cart system, allowing customers to add, remove, and manage products in their shopping carts."],
         techLogos: [
-            "img/HTML5.webp", 
-            "img/CSS.jpeg", 
-            "img/JavaScript.png", 
-            "img/Nextjs.png",
-            "img/Flask.jpeg",
-            "img/MySQL.png",
-            "img/GitHub.png", 
-            "img/Heroku.png",
-            "img/Vercel.png", 
-            "img/MaterialUI.png", 
-            "img/Tailwind.png"],
+            "img/logo/TypeScript.png", 
+            "img/logo/Nextjs.png",
+            "img/logo/Flask.png",
+            "img/logo/MySQL.png",
+            "img/logo/GitHub.png", 
+            "img/logo/Heroku.png",
+            "img/logo/Vercel.png", 
+            "img/logo/MaterialUI.png", 
+            "img/logo/Tailwind.png"],
+        thumbnails: [
+            "img/multi role access control.png", 
+            "img/register.png", 
+            "img/login page.png", 
+            "img/list product.png",
+            "img/cart system.png",
+            "img/portfolio-mobile-1.png"],
         liveDemo: "https://front-end-five-psi.vercel.app/",
         frontend: "https://github.com/LightKazuto/Front-end",
         backend: "https://github.com/bintangsenjapratama/fsse-group-j-gfp",
         image: "img/portfolio-web-1.png"
     },
     {
-        name: "Automation Testing",
-        background: "Description for project 2, including background, features, and contributions.",
-        features: "",
-        contributions: "",
-        techLogos: ["img/logo-js.png", "img/logo-react.png"],
-        image: "img/portfolio-web-2.png"
+        name: "DELISH",
+        background: "DELISH is a restaurant discovery application designed to benefit both customers and restaurants. It helps restaurants boost their revenue and attract new customers while providing users with valuable information to find restaurants and make dining decisions.",
+        features: [
+            "- User authentication using email/phone number", 
+            "- Profile screen", 
+            "- Pre-filled user rating form",
+            "- Review list page"],
+        contributions: [
+            "- Developed the profile screen based on Figma designs, maintaining high fidelity to the design specifications.",
+            "- Fetch and display user data, ensuring that the profile screen was only accessible post-login, preventing unauthorized access, and enhancing security.",
+            "- Ensured the profile screen was fully responsive, optimizing for mobile views, and improving platform usability."],
+        techLogos: [
+            "img/logo/Nextjs.png",
+            "img/logo/Flask.png",
+            "img/logo/MySQL.png",
+            "img/logo/GitHub.png", 
+            "img/logo/Vercel.png", 
+            "img/logo/MaterialUI.png", 
+            "img/logo/Python.png", 
+            "img/logo/AWS.png", 
+            "img/logo/Tailwind.png"],
+        thumbnails: [
+            "img/delish-cover.png", 
+            "img/delish-login.png", 
+            "img/delish-profile.png", 
+            "img/delish-reviews.png",
+            "img/delish-form.png"],
+        liveDemo: "https://frontend-delish-app.vercel.app/",
+        frontend: "https://github.com/tobiasagyasta/frontend-delish-app",
+        backend: "https://github.com/OnLeeTwo/backend-delish-app",
+        image: "img/delish-cover.png"
     }
 ];
 
@@ -161,34 +191,47 @@ function openPopup(index) {
     document.getElementById("popup").style.display = "block";
     document.getElementById("project-name").textContent = project.name;
     document.getElementById("background").textContent = project.background;
+
+    // Update thumbnails
+    const projectThumbnails = document.getElementById("thumbnails");
+    projectThumbnails.innerHTML = '';
+    project.thumbnails.forEach(thumbnail => {
+        const img = document.createElement('img');
+        img.src = thumbnail;
+        img.setAttribute('alt', '');
+        img.setAttribute('onclick', `updateMainImage('${thumbnail}')`);
+        projectThumbnails.appendChild(img);
+    });
     
-    // // Update features
-    // const projectFeatures = document.getElementById("features");
-    // project.features.forEach(feature => {
-    //     const text = document.createElement('p');
-    //     text.textContent = feature;
-    //     projectFeatures.appendChild(text);
-    // });
+    // Update features
+    const projectFeatures = document.getElementById("features");
+    projectFeatures.innerHTML = '';
+    project.features.forEach(feature => {
+        const text = document.createElement('p');
+        text.textContent = feature;
+        projectFeatures.appendChild(text);
+    });
     // projectFeatures.innerHTML = `${feature}<br>`;
     
-    // // Update contributions
-    // const myContributions = document.getElementById("contributions");
-    // project.contributions.forEach(contribution => {
-    //     const text = document.createElement('p');
-    //     text.textContent = contribution;
-    //     myContributions.appendChild(text);
-    // });
-    // myContributions.innerHTML = `${contribution}<br>`;
+    // Update contributions
+    const myContributions = document.getElementById("contributions");
+    myContributions.innerHTML = '';
+    project.contributions.forEach(contribution => {
+        const text = document.createElement('p');
+        text.textContent = contribution;
+        myContributions.appendChild(text);
+    });
+    // myContributions.innerHTML = `${contribution}<br>`;  
 
-    // // Update technology logos
-    // const techLogosContainer = document.getElementById("tech-logos");
-    // techLogosContainer.innerHTML = '';
-    // project.techLogos.forEach(logo => {
-    //     const img = document.createElement('img');
-    //     img.src = logo;
-    //     img.alt = logo.split('/').pop().split('.')[0];
-    //     techLogosContainer.appendChild(img);
-    // });
+    // Update technology logos
+    const techLogosContainer = document.getElementById("tech-logos");
+    techLogosContainer.innerHTML = '';
+    project.techLogos.forEach(logo => {
+        const img = document.createElement('img');
+        img.src = logo;
+        img.alt = logo.split('/').pop().split('.')[0];
+        techLogosContainer.appendChild(img);
+    });
 
     // Update links
     const projectLinks = document.getElementById("project-links");
