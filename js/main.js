@@ -183,6 +183,34 @@ const projects = [
         frontend: "https://github.com/tobiasagyasta/frontend-delish-app",
         backend: "https://github.com/OnLeeTwo/backend-delish-app",
         image: "img/delish-cover.png"
+    },
+    {
+        name: "LMS",
+        background: "A web-based learning management system designed to simplify the process for instructors and students to manage and access courses and learning modules more quickly and efficiently compared to manual methods.",
+        features: [
+            "- Admin Features: Institute creation and management, user role assignment (Active, Pending, Inactive), and enrollment management.", 
+            "- Instructor Features: Course creation, module management, and content organization tools.", 
+            "- Student Features: Course access, progress tracking, and multi-institute enrollment capabilities."],
+        contributions: [
+            "- Developed and implemented RESTful APIs for student enrollment and course access, optimizing data retrieval and ensuring efficient access to learning resources for a user.",
+            "- Designed and implemented the backend logic for assessment submission management, including automated scoring for multiple-choice assessments and a robust workflow for handling manually graded essay submissions, improving submission processing efficiency.",
+            "- Developed the frontend interface for instructors to review and grade student submissions, and integrate it with backend APIs to display student submissions, ensuring seamless data flow between the frontend and backend systems and providing a consistent user experience."],
+        techLogos: [
+            "img/logo/Nextjs.png",
+            "img/logo/Flask.png",
+            "img/logo/MySQL.png",
+            "img/logo/GitHub.png", 
+            "img/logo/Vercel.png", 
+            "img/logo/MaterialUI.png", 
+            "img/logo/Python.png", 
+            "img/logo/AWS.png", 
+            "img/logo/Tailwind.png"],
+        thumbnails: [
+            "img/lms-student.png"],
+        liveDemo: "https://lms-frontend-team1.vercel.app/",
+        frontend: "https://github.com/tobiasagyasta/lms-frontend",
+        backend: "https://github.com/jonathaneverald/backend-milestone-2-revou-next",
+        image: "img/lms-student.png"
     }
 ];
 
@@ -191,6 +219,7 @@ function openPopup(index) {
     document.getElementById("popup").style.display = "block";
     document.getElementById("project-name").textContent = project.name;
     document.getElementById("background").textContent = project.background;
+    document.getElementById("main-image").src = project.thumbnails[0];
 
     // Update thumbnails
     const projectThumbnails = document.getElementById("thumbnails");
